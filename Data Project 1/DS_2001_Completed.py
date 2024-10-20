@@ -1,7 +1,7 @@
 import pandas as pd
 from flask import Flask
 from flask import jsonify
-import reques
+import requests
 
 #Data project 1, comments are references to how to use and the functions.
 #This is part 1 of the project, writing an API to a csv or sql file.
