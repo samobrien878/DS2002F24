@@ -29,6 +29,7 @@ df = df.rename(columns={i: columns[i]['name'] for i in range(len(columns))})
 columns_to_delete = ['sid','created_meta', 'updated_meta', 'meta', 'position']
 df = df.drop(columns=[col for col in columns_to_delete if col in df.columns])
 
+# Deciding in what format to write the file to
 x = input('Do you want to write this API as a CSV file or SQL file?: ')
 
 if x.lower() == 'csv':
@@ -62,7 +63,6 @@ popularity_threshold = 100
 df['Is Popular Name'] = df['Count'].apply(lambda x: 'Yes' if x > popularity_threshold else 'No')
 
 #Writing it out to either a JSON or SQL file
-
 y = input('Do you want to write this CSV to an JSON file or SQL file?: ')
 
 # Check if the input variable y equals 'api'
